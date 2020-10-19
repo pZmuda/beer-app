@@ -55,11 +55,11 @@ function App() {
   const handleRemove = (item) => {
     const arr = [];
     setFavorites([]);
-    favorites.filter((one) => (one.id !== item ? arr.push(one) : "nie pyklo"));
+    favorites.filter((one) => (one.id !== item ? arr.push(one) : null));
     setFavorites(arr);
   };
 
-  const ulubionePiwa = favorites.map(fav => (
+  const FavoriteBeers = favorites.map(fav => (
       <ListGroupItem key={fav.id}>
         {fav.name}{" "}
         <Button key={fav.id} onClick={() => handleRemove(fav.id)}>
@@ -88,7 +88,7 @@ function App() {
           <ModalHeader toggle={() => setModal(!modal)}>Ulubione Piwa</ModalHeader>
           <ModalBody>
             <ListGroup>
-              {ulubionePiwa}
+              {FavoriteBeers}
             </ListGroup>
           </ModalBody>
         </Modal>
@@ -97,7 +97,7 @@ function App() {
         style={{ position: "fixed", right: "50px", top: "50vh" }}
         onClick={moreBear}
       >
-        Wincej
+        Więcej
       </Button>
     </>
   );
