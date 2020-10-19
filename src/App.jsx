@@ -78,7 +78,6 @@ function App() {
         Ulubione
       </Button>
       <Container>
-        <h1>Bear App</h1>
         <ItemList posts={post} onclick={addBear} />
         <Modal
           isOpen={modal}
